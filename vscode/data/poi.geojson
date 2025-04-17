@@ -1,0 +1,869 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Hồ Gươm",
+        "description": "Hồ Hoàn Kiếm còn được gọi là Hồ Gươm là một hồ nước ngọt tự nhiên nằm ở quận Hoàn Kiếm, trung tâm thành phố Hà Nội. Hồ có diện tích khoảng 12 ha[2]. Trước kia, hồ còn có các tên gọi là hồ Lục Thủy (vì nước có màu xanh quanh năm), hồ Thủy Quân (dùng để duyệt thủy binh), hồ Tả Vọng và Hữu Vọng (trong thời Lê mạt). Tên gọi Hoàn Kiếm xuất hiện vào đầu thế kỷ 15 gắn với truyền thuyết vua Lê Lợi trả lại gươm thần cho Rùa thần.",
+        "type": "hồ",
+        "image": "image/hoguom.jpg",
+        "rating": 4.7,
+        "address": "Hàng Trống, Hoàn Kiếm, Hà Nội",
+        "opening_hours": "Mở cửa cả ngày",
+        "phone": "",
+        "website": "http://hogoam.vn"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [105.852, 21.0285]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Lăng Chủ tịch Hồ Chí Minh",
+        "description": "Lăng Chủ tịch Hồ Chí Minh, còn gọi là Lăng Hồ Chủ tịch, Lăng Bác, là nơi gìn giữ thi hài Chủ tịch Hồ Chí Minh. Lăng được chính thức khởi công ngày 2 tháng 9 năm 1973, tại vị trí lễ đài cũ giữa Quảng trường Ba Đình, nơi Chủ tịch Hồ Chí Minh từng chủ trì các cuộc gặp mặt quan trọng.",
+        "type": "di tích",
+        "image": "image/langbac.jpg",
+        "rating": 4.6,
+        "address": "2 Hùng Vương, Điện Biên, Ba Đình, Hà Nội",
+        "opening_hours": "Mở cửa: 07:30 - 11:00 (Thứ 3 - Chủ nhật)",
+        "phone": "+84 24 3845 5128",
+        "website": "http://langchutich.gov.vn"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [105.8342, 21.0379]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Văn Miếu - Quốc Tử Giám",
+        "description": "Văn Miếu - Quốc Tử Giám là quần thể di tích đa dạng, phong phú hàng đầu của thành phố Hà Nội, nằm ở phía Nam kinh thành Thăng Long. Quần thể kiến trúc Văn Miếu – Quốc Tử Giám bao gồm: hồ Văn, khu Văn Miếu – Quốc Tử Giám và vườn Giám, mà kiến trúc chủ thể là Văn miếu (chữ Hán: 文廟) - nơi thờ Khổng Tử, và Quốc tử giám (chữ Hán: 國子監) - trường đại học đầu tiên của Việt Nam.",
+        "type": "di tích",
+        "image": "image/vanmieu.jpg",
+        "rating": 4.5,
+        "address": "58 Quốc Tử Giám, Văn Miếu, Đống Đa, Hà Nội",
+        "opening_hours": "Mở cửa: 08:00 - 17:00",
+        "phone": "+84 24 3747 2566",
+        "website": "http://vanmieu.gov.vn"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [105.835, 21.0281]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Nhà thờ Lớn Hà Nội",
+        "description": "Nhà thờ Lớn Hà Nội (tên chính thức: Nhà thờ chính tòa Thánh Giuse, cũng gọi là Nhà thờ chính tòa Hà Nội) là nhà thờ chính tòa của Tổng giáo phận Hà Nội, nơi có ngai tòa của Tổng giám mục. Đây là một nhà thờ cổ kính tại thành phố này, thường xuyên diễn ra các sinh hoạt tín ngưỡng của các giáo dân Công giáo thuộc giáo xứ chính tòa cũng như của toàn tổng giáo phận. Linh mục chính xứ hiện nay là linh mục Giuse Tạ Minh Quý.",
+        "type": "nhà thờ",
+        "image": "image/nhatholon.jpg",
+        "rating": 4.4,
+        "address": "40 Nhà Chung, Hàng Trống, Hoàn Kiếm, Hà Nội",
+        "opening_hours": "Mở cửa: 08:00 - 20:00",
+        "phone": "+84 24 3828 4567",
+        "website": "http://nhatholonhanoi.vn"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [105.8496, 21.0287]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Chùa Trấn Quốc",
+        "description": "Chùa Trấn Quốc nằm trên một hòn đảo phía Đông Hồ Tây (quận Tây Hồ). Chùa có lịch sử gần 1500 năm và được coi là lâu đời nhất ở Thăng Long - Hà Nội. Dưới thời nhà Lý và nhà Trần, chùa Trấn Quốc là trung tâm Phật giáo của kinh thành Thăng Long.",
+        "type": "chùa",
+        "image": "image/chuatranquoc.jpg",
+        "rating": 4.6,
+        "address": "Thanh Niên, Trúc Bạch, Ba Đình, Hà Nội",
+        "opening_hours": "Mở cửa: 07:00 - 18:00",
+        "phone": "+84 24 3829 3869",
+        "website": "http://chuatranquoc.vn"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [105.8365, 21.0501]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Cầu Long Biên",
+        "description": "Cầu Long Biên (tên cũ là cầu (Pont de) Paul Doumer) là cây cầu thuộc đoạn đường quốc lộ 1 cũ bắc qua sông Hồng kết nối quận Hoàn Kiếm, quận Ba Đình với quận Long Biên của Hà Nội",
+        "type": "cầu",
+        "image": "image/caulongbien.jpg",
+        "rating": 4.3,
+        "address": "Long Biên, Hoàn Kiếm, Hà Nội",
+        "opening_hours": "Mở cửa cả ngày",
+        "phone": "Không có số điện thoại",
+        "website": ""
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [105.8663, 21.0403]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Bảo tàng Dân tộc học",
+        "description": "Bảo tàng Dân tộc học chứa đựng văn hóa của 54 dân tộc Việt Nam, là một trong những bảo tàng ở Hà Nội nhất định nên ghé thăm một lần. Nơi đây có ý nghĩa văn hóa và lịch sử to lớn, rất phù hợp với những du khách đam mê tìm hiểu, khám phá Việt Nam.",
+        "type": "bảo tàng",
+        "image": "image/baotangdantochoc.jpg",
+        "rating": 4.5,
+        "address": "Nguyễn Văn Huyên, Nghĩa Đô, Cầu Giấy, Hà Nội",
+        "opening_hours": "Mở cửa: 08:30 - 17:30 (Đóng cửa thứ Hai)",
+        "phone": "+84 24 3756 2192",
+        "website": "http://vme.org.vn"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [105.8, 21.0381]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Công viên Thống Nhất",
+        "description": "Công viên Thống Nhất là một trong những công viên lớn ở Hà Nội, Việt Nam. Trong công viên có Hồ Bảy Mẫu. Nó tiếp giáp với 4 mặt phố: phố Trần Nhân Tông, Nguyễn Đình Chiểu, Lê Duẩn và Đại Cồ Việt, thuộc địa bàn quận Hai Bà Trưng, thành phố Hà Nội.",
+        "type": "công viên",
+        "image": "image/congvienthongnhat.jpg",
+        "rating": 4.2,
+        "address": "354A Đ. Lê Duẩn, Phương Liên, Đống Đa, Hà Nội",
+        "opening_hours": "Mở cửa: 05:00 - 20:00",
+        "phone": "+84 24 3972 5405",
+        "website": ""
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [105.8476, 21.0149]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Phố cổ Hà Nội",
+        "description": "Khu phố cổ Hà Nội là tên gọi thông thường của một khu vực đô thị có từ lâu đời của Hà Nội nằm ở ngoài hoàng thành Thăng Long. Khu đô thị này tập trung dân cư hoạt động tiểu thủ công nghiệp và buôn bán giao thương, hình thành lên những phố nghề đặc trưng, mang những nét truyền thống riêng biệt của cư dân thành thị, kinh đô. Ngày nay khu phố cổ Hà Nội là điểm đến hấp dẫn cho những ai muốn tìm hiểu về Thăng Long - Đông Đô - Hà Nội.",
+        "type": "khu phố",
+        "image": "image/phoco.jpg",
+        "rating": 4.6,
+        "address": "Hoàn Kiếm, Hà Nội",
+        "opening_hours": "Mở cửa cả ngày",
+        "phone": "Không có số điện thoại",
+        "website": ""
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [105.8542, 21.0365]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Nhà hát Lớn",
+        "description": "Nhà hát Lớn Hà Nội là một công trình kiến trúc tại thành phố Hà Nội, Việt Nam, phục vụ biểu diễn nghệ thuật. Nhà hát tọa lạc trên quảng trường Cách mạng tháng Tám, vị trí ở số 1A phố Tràng Tiền, phường Tràng Tiền, quận Hoàn Kiếm, thành phố Hà Nội, không xa hồ Hoàn Kiếm và Bảo tàng Lịch sử Việt Nam, cạnh khách sạn Hilton Hanoi Opera, nhìn ra các vườn hoa Nhà hát Lớn và vườn hoa 19-8. Công trình được người Pháp khởi công xây dựng năm 1901 và hoàn thành năm 1911, theo mẫu Nhà hát Opéra Garnier ở Paris nhưng mang tầm vóc nhỏ hơn và sử dụng các vật liệu phù hợp với điều kiện khí hậu địa phương.",
+        "type": "kiến trúc",
+        "image": "image/nhahatlon.jpg",
+        "rating": 4.5,
+        "address": "1 Tràng Tiền, Phan Chu Trinh, Hoàn Kiếm, Hà Nội",
+        "opening_hours": "Mở cửa: 08:00 - 17:00",
+        "phone": "+84 24 3933 0113",
+        "website": "http://nhahatlon.org.vn"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [105.8579, 21.0243]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Hồ Tây",
+        "description": "Hồ Tây (với các tên gọi khác trong lịch sử như Đầm Xác Cáo, Hồ Kim Ngưu, Lãng Bạc, Dâm Đàm, Đoài Hồ) là hồ tự nhiên lớn nhất thành phố Hà Nội, hiện thuộc địa phận quận Tây Hồ. Đây là một hồ móng ngựa và là vết tích của dòng chảy cũ của sông Hồng. Hồ có diện tích hơn 500 ha với chu vi là khoảng 14,8 km.[2]",
+        "type": "hồ",
+        "image": "image/hotay.jpg",
+        "rating": 4.4,
+        "address": "Tây Hồ, Hà Nội",
+        "opening_hours": "Mở cửa cả ngày",
+        "phone": "Không có số điện thoại",
+        "website": ""
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [105.8106, 21.05]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Làng gốm Bát Tràng",
+        "description": "Gốm Bát Tràng là tên gọi chung của các loại đồ gốm Việt Nam được sản xuất tại làng Bát Tràng, thuộc xã Bát Tràng, huyện Gia Lâm, Hà Nội. Tên gọi Bát Tràng có thể hiểu là 'cái sân lớn chuyên sản xuất bát'. Tuy nhiên, theo một số tài liệu khác, tên gọi Bát Tràng có thể bắt nguồn từ tên gọi Bạch Thổ Phường, nghĩa là 'phường đất sét trắng'.",
+        "type": "làng nghề",
+        "image": "image/lgbt.jpg",
+        "rating": 4.3,
+        "address": "Bát Tràng, Gia Lâm, Hà Nội",
+        "opening_hours": "Mở cửa: 08:00 - 18:00",
+        "phone": "+84 24 3874 1066",
+        "website": ""
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [105.941, 20.983]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Làng lụa Vạn Phúc",
+        "description": "Làng lụa Hà Đông hay Làng lụa Vạn Phúc (nay thuộc phường Vạn Phúc, quận Hà Đông, cách trung tâm Hà Nội khoảng 10 km) là một làng nghề dệt lụa tơ tằm đẹp nổi tiếng có từ ngàn năm trước. Lụa Vạn Phúc có nhiều mẫu hoa văn và lâu đời bậc nhất Việt Nam.Lụa Hà Đông từng được chọn may trang phục cho triều đình.",
+        "type": "làng nghề",
+        "image": "image/luavanphuc.jpg",
+        "rating": 4.2,
+        "address": "Vạn Phúc, Hà Đông, Hà Nội",
+        "opening_hours": "Mở cửa: 08:00 - 17:00",
+        "phone": "+84 24 3352 1538",
+        "website": ""
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [105.769, 20.9863]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Hoàng thành Thăng Long",
+        "description": "Hoàng thành Thăng Long (chữ Hán: 昇龍皇城; Hán-Việt: Thăng Long Hoàng thành) là quần thể di tích gắn với lịch sử kinh thành Thăng Long - Đông Kinh và tỉnh thành Hà Nội bắt đầu từ thời kì tiền Thăng Long (An Nam đô hộ phủ thế kỷ VII) qua thời Đinh - Tiền Lê, phát triển mạnh dưới thời Lý, Trần, Lê và thành Hà Nội dưới triều Nguyễn. Đây là công trình kiến trúc các triều vua xây dựng trong nhiều giai đoạn lịch sử và trở thành một trong những di tích quan trọng bậc nhất trong hệ thống các di tích Việt Nam.",
+        "type": "di tích",
+        "image": "image/httl.jpg",
+        "rating": 4.4,
+        "address": "19C Hoàng Diệu, Điện Biên, Ba Đình, Hà Nội",
+        "opening_hours": "Mở cửa: 08:00 - 17:00",
+        "phone": "+84 24 3734 5451",
+        "website": "http://hoangthanhthanglong.vn"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [105.8372, 21.0359]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Bảo tàng Mỹ thuật",
+        "description": "Bảo tàng Mỹ thuật Việt Nam là một trong những bảo tàng có vị trí quan trọng nhất trong việc lưu giữ kho tàng di sản văn hóa nghệ thuật của cộng đồng các dân tộc Việt Nam. Bảo tàng tọa lạc tại số 66 đường Nguyễn Thái Học, phường Điện Biên, quận Ba Đình, thành phố Hà Nội, nằm đối diện phía sau Văn Miếu - Quốc Tử Giám.",
+        "type": "bảo tàng",
+        "image": "image/btmt.jpg",
+        "rating": 4.3,
+        "address": "66 Nguyễn Thái Học, Điện Biên, Ba Đình, Hà Nội",
+        "opening_hours": "Mở cửa: 08:30 - 17:00",
+        "phone": "+84 24 3733 2131",
+        "website": "http://vnfam.vn"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [105.8395, 21.0306]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Chùa Một Cột",
+        "description": "Chùa Một Cột có tên ban đầu là Liên Hoa Đài (蓮花臺) tức là Đài Hoa Sen với lối kiến trúc độc đáo: một điện thờ đặt trên một cột trụ duy nhất.",
+        "type": "chùa",
+        "image": "image/cmc.jpg",
+        "rating": 4.5,
+        "address": "Đội Cấn, Ba Đình, Hà Nội",
+        "opening_hours": "Mở cửa: 07:00 - 18:00",
+        "phone": "+84 24 3825 1234",
+        "website": "http://chuamotcot.vn"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [105.8348, 21.0366]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Đền Ngọc Sơn",
+        "description": "Đền Ngọc Sơn (tiếng Trung: 玉山祠) là một ngôi đền thờ nằm trên đảo Ngọc của hồ Hoàn Kiếm ở Hà Nội, Việt Nam. Đây cũng là một di tích quốc gia đặc biệt của Việt Nam được xếp hạng đợt 4.",
+        "type": "đền",
+        "image": "image/dns.jpg",
+        "rating": 4.5,
+        "address": "Đinh Tiên Hoàng, Hàng Trống, Hoàn Kiếm, Hà Nội",
+        "opening_hours": "Mở cửa: 08:00 - 18:00",
+        "phone": "+84 24 3825 1234",
+        "website": ""
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [105.8524, 21.0304]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Công viên Bách Thảo",
+        "description": "Vườn bách thảo Hà Nội hay Công viên Bách Thảo là một công viên cây xanh nằm ở phía tây bắc thủ đô Hà Nội, được thành lập từ những năm đầu người Pháp đặt chân đến Việt Nam trong cuộc xâm lăng đô hộ và thuộc địa. Hiện nay vườn được ví như lá phổi xanh của Hà Nội, nơi những người yêu thiên nhiên được đắm mình trong màu xanh cây lá và những âm thanh của rừng, với những cây cổ thụ lớn bằng vòng tay mấy người ôm là chứng nhân của nhiều biến cố trong lịch sử thủ đô.",
+        "type": "công viên",
+        "image": "image/cvbt.jpg",
+        "rating": 4.1,
+        "address": "Ngọc Hà, Ba Đình, Hà Nội",
+        "opening_hours": "Mở cửa: 05:00 - 22:00",
+        "phone": "+84 24 3732 1987",
+        "website": ""
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [105.8314, 21.0415]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Chợ Đồng Xuân",
+        "description": "Chợ Đồng Xuân là một trong những chợ lớn nhất tại Hà Nội, Việt Nam; là chợ lớn nhất trong khu phố cổ Hà Nội. Chợ có lịch sử tồn tại hàng trăm năm từ thời phong kiến nhà Nguyễn.",
+        "type": "chợ",
+        "image": "image/cdx.jpg",
+        "rating": 4.2,
+        "address": "Đồng Xuân, Hoàn Kiếm, Hà Nội",
+        "opening_hours": "Mở cửa: 06:00 - 19:00",
+        "phone": "+84 24 3828 2965",
+        "website": ""
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [105.8545, 21.0383]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Công viên Yên Sở",
+        "description": "Công viên Yên Sở nằm cạnh nút giao cao tốc Pháp Vân – Cầu Giẽ, thuộc địa phận phường Yên Sở, quận Hoàng Mai, là một trong những điểm cắm trại hot nhất ở Thủ đô hiện nay. Công viên được xây dựng với mục đích tăng cường diện tích cây xanh cho thành phố, đồng thời tạo ra một địa điểm vui chơi cho cư dân xung quanh.",
+        "type": "công viên",
+        "image": "image/cvys.jpg",
+        "rating": 4.0,
+        "address": "Hoàng Mai, Hà Nội",
+        "opening_hours": "Mở cửa: 05:00 - 21:00",
+        "phone": "+84 24 3643 1234",
+        "website": ""
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [105.8735, 20.9702]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Thiên đường Bảo Sơn",
+        "description": "Công viên Thiên đường Bảo Sơn tọa lạc tại đường Lê Trọng Tấn, xã An Khánh, huyện Hoài Đức, trên một không gian vô cùng rộng lớn và thoáng đãng. Đây là một trong những khu vui chơi trẻ em hấp dẫn ở Hà Nội được nhiều người lựa chọn trong hành trình khám phá Thủ đô. Du khách có thể dễ dàng tìm thấy Thiên đường Bảo Sơn bởi khu vui chơi này rất gần trung tâm Hà Nội, cách Trung tâm hội nghị Quốc gia chỉ khoảng 6km dọc theo Đại lộ Thăng Long. ",
+        "type": "khu vui chơi",
+        "image": "image/tdbs.jpg",
+        "rating": 4.1,
+        "address": "An Khánh, Hoài Đức, Hà Nội",
+        "opening_hours": "Mở cửa: 08:00 - 17:00",
+        "phone": "+84 24 3366 6666",
+        "website": "http://baosonparadise.vn"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [105.731, 21.0022]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Vincom Bà Triệu",
+        "description": "Vincom Bà Triệu hay còn được gọi là Vincom Center Hà Nội, Vincom City Towers chính thức hoạt động từ năm 2004. Địa chỉ Vincom Bà Triệu tọa lạc tại 191 phố Bà Triệu, phường Lê Đại Hành, quận Hai Bà Trưng, thành phố Hà Nội.",
+        "type": "trung tâm thương mại",
+        "image": "image/vcbt.jpg",
+        "rating": 4.3,
+        "address": "191 Bà Triệu, Lê Đại Hành, Hai Bà Trưng, Hà Nội",
+        "opening_hours": "Mở cửa: 09:30 - 22:00",
+        "phone": "+84 24 2220 0666",
+        "website": "http://vincom.com.vn"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [105.8497, 21.0136]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Keangnam Hanoi Landmark Tower",
+        "description": "Keangnam Hanoi Landmark 72 không chỉ là biểu tượng thịnh vượng của Hà Nội mà còn là điểm đến hấp dẫn cho những ai đam mê giải trí và khám phá với các trung tâm mua sắm và khu vui chơi hiện đại, đài quan sát Sky72 có tầm nhìn toàn thành phố tuyệt đẹp.",
+        "type": "cao ốc",
+        "image": "image/kn.jpg",
+        "rating": 4.2,
+        "address": "Phạm Hùng, Mễ Trì, Nam Từ Liêm, Hà Nội",
+        "opening_hours": "Mở cửa: 08:00 - 20:00",
+        "phone": "+84 24 3837 3333",
+        "website": "http://keangnamhanoi.com"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [105.783, 21.0166]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Chùa Quán Sứ",
+        "description": "Chùa Quán Sứ (舘使寺) là một ngôi chùa ở số 73 phố Quán Sứ, phường Trần Hưng Đạo, quận Hoàn Kiếm, thành phố Hà Nội. Trước đây địa phận này thuộc thôn An Tập, phường Cổ Vũ, tổng Tiền Nghiêm (sau đổi là tổng Vĩnh Xương), huyện Thọ Xương.",
+        "type": "chùa",
+        "image": "image/cqs.jpg",
+        "rating": 4.4,
+        "address": "73 Quán Sứ, Trần Hưng Đạo, Hoàn Kiếm, Hà Nội",
+        "opening_hours": "Mở cửa: 07:00 - 17:00",
+        "phone": "+84 24 3825 1234",
+        "website": ""
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [105.8426, 21.025]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Trung tâm Hội nghị Quốc gia",
+        "description": "Trung tâm Hội nghị Quốc gia Việt Nam nằm tại đường Phạm Hùng, phường Mễ Trì, quận Nam Từ Liêm, thành phố Hà Nội và được coi là tổ hợp công trình đa năng lớn nhất tại thủ đô. Sự kiện đầu tiên diễn ra ở đây là Hội nghị thượng đỉnh Diễn đàn Hợp tác Kinh tế châu Á - Thái Bình Dương (APEC) vào ngày 18 và 19 tháng 12 năm 2006. Đây là nơi tổ chức các đại hội, hội nghị của Đảng Cộng sản Việt Nam, hội nghị quốc tế, các hoạt động chính trị, thương mại mang tính quốc gia và quốc tế. Công trình được khởi công xây dựng vào tháng 11 năm 2004 và hoàn thành sau 22 tháng thi công.",
+        "type": "trung tâm hội nghị",
+        "image": "image/tthn.jpg",
+        "rating": 4.5,
+        "address": "Phạm Hùng, Mễ Trì, Nam Từ Liêm, Hà Nội",
+        "opening_hours": "Mở cửa: 08:00 - 17:00",
+        "phone": "+84 24 3837 1234",
+        "website": "http://nch.gov.vn"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [105.7798, 21.0139]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Aeon Mall Long Biên",
+        "description": "AEON MALL Long Biên là trung tâm thương mại Nhật Bản đầu tiên tại Hà Nội khai trương vào ngày 28 tháng 10 năm 2015. Dự án với số vốn đầu tư lên đến 200 triệu đô la Mỹ được xây dựng trên tổng diện tích đất khoảng 10 ha, hiện tại AEON MALL Long Biên là một trong những khu trung tâm mua sắm sầm uất, tiện lợi bậc nhất Hà Nội.",
+        "type": "trung tâm thương mại",
+        "image": "image/aeonmall.jpg",
+        "rating": 4.4,
+        "address": "27 Cổ Linh, Long Biên, Hà Nội",
+        "opening_hours": "Mở cửa: 10:00 - 22:00",
+        "phone": "+84 24 3200 3333",
+        "website": "http://aeonmall-longbien.com.vn"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [105.9122, 21.0271]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Indochina Plaza Hanoi",
+        "description": "Trung tâm thương mại Indochina Plaza Hanoi ở ngay mặt tiền trung tâm khu tổ hợp nhà ở và trung tâm bán lẻ và thương mại cao cấp IPH Xuân Thủy, Cầu Giấy. Trung tâm chính thức khai trương từ 31/08/2012 với 5 tầng dịch vụ thương mại và bán lẻ cho khách hàng.",
+        "type": "trung tâm thương mại",
+        "image": "image/indo.jpg",
+        "rating": 4.2,
+        "address": "241 Xuân Thủy, Dịch Vọng Hậu, Cầu Giấy, Hà Nội",
+        "opening_hours": "Mở cửa: 09:00 - 21:00",
+        "phone": "+84 24 3795 1234",
+        "website": "http://indochinaplaza.com"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [105.7836, 21.036]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Học viện Nông nghiệp Việt Nam",
+        "description": "Học viện Nông nghiệp Việt Nam (tiếng Anh: Vietnam National University of Agriculture, viết tắt là VNUA), tiền thân là Trường Đại học Nông nghiệp 1 - Hà Nội, là học viện chuyên ngành đứng đầu về đào tạo nhóm ngành nông - lâm - ngư nghiệp tại miền Bắc Việt Nam, thuộc nhóm ba mươi trường đại học đứng đầu Đông Nam Á, thuộc nhóm các trường đại học, học viện trọng điểm quốc gia Việt Nam. Trường trực thuộc Bộ Nông nghiệp và Phát triển nông thôn.",
+        "type": "trường đại học",
+        "image": "image/hvnn.jpg",
+        "rating": 4.3,
+        "address": "Trâu Quỳ, Gia Lâm, Hà Nội",
+        "opening_hours": "Mở cửa: 07:00 - 17:00",
+        "phone": "+84 24 3827 6295",
+        "website": "http://vnua.edu.vn"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [105.9251, 21.0013]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Đại học Bách Khoa Hà Nội",
+        "description": "Đại học Bách khoa Hà Nội (tiếng Anh: Hanoi University of Science and Technology, HUST) là đại học theo lĩnh vực kỹ thuật và công nghệ có trụ sở tại Hà Nội, Việt Nam. Đại học Bách khoa Hà Nội được xem là một trong những đại học kỹ thuật lớn nhất Việt Nam, trực thuộc Bộ Giáo dục và Đào tạo và được xếp vào nhóm các trường Đại học, Học viện trọng điểm Quốc gia của Việt Nam.",
+        "type": "trường đại học",
+        "image": "image/bkhn.jpg",
+        "rating": 4.4,
+        "address": "1 Đại Cồ Việt, Bách Khoa, Hai Bà Trưng, Hà Nội",
+        "opening_hours": "Mở cửa: 07:00 - 17:00",
+        "phone": "+84 24 3869 6099",
+        "website": "http://hust.edu.vn"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [105.8412, 21.0051]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Đại học Quốc gia Hà Nội",
+        "description": "Đại học Quốc gia Hà Nội (tiếng Anh: Vietnam National University, Hanoi, VNU),[6][a] mã đại học QH, là một trong hai hệ thống đại học quốc gia của Việt Nam, có trụ sở tại Hà Nội, được đánh giá là một trong 1000 đại học, trường đại học tốt nhất thế giới của Việt Nam.",
+        "type": "trường đại học",
+        "image": "image/dhqg.jpg",
+        "rating": 4.5,
+        "address": "144 Xuân Thủy, Dịch Vọng Hậu, Cầu Giấy, Hà Nội",
+        "opening_hours": "Mở cửa: 07:00 - 17:00",
+        "phone": "+84 24 3754 7901",
+        "website": "http://vnu.edu.vn"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [105.783, 21.0386]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Công viên Cầu Giấy",
+        "description": "Công viên Cầu Giấy được biết đến là địa điểm vui chơi giải trí hấp dẫn ở Hà Nội. Đồng thời nơi đây còn được mệnh danh là “lá phổi xanh” của thành phố, góp phần mang đến không gian sống trong lành hơn. Đến đấy, bạn có thể tản bộ, hít thở tận hưởng không khí trong lành, chụp ảnh, ngắm cảnh…",
+        "type": "công viên",
+        "image": "image/cvcg.jpg",
+        "rating": 4.1,
+        "address": "Dịch Vọng, Cầu Giấy, Hà Nội",
+        "opening_hours": "Mở cửa: 05:00 - 22:00",
+        "phone": "+84 24 3756 1234",
+        "website": ""
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [105.7874, 21.0356]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Times City",
+        "description": "Khu đô thị Vinhomes Times City Hà Nội (Vinhomes Times City, hay gọi tắt là Times City) là một tổ hợp đô thị phức hợp tại Hà Nội được đầu tư bởi tập đoàn Vingroup, có diện tích mặt bằng tổng cộng 360.367 đến 360.500 m², tổng diện tích sàn xây dựng vào khoảng 2.181.298 m² đến 2.205.595 m² khởi công xây dựng từ năm 2011, với tổng mức vốn đầu tư dự toán 23.883 tỷ đến 30.308 tỷ. Times City bao gồm nhiều phân khu chức năng: căn hộ, trung tâm thương mại, bệnh viện, trường học, công viên, hồ nước, hồ bơi, thủy cung, quảng trường với sân khấu nhạc nước đặc trưng...",
+        "type": "khu đô thị",
+        "image": "image/tct.jpg",
+        "rating": 4.4,
+        "address": "458 Minh Khai, Vĩnh Tuy, Hai Bà Trưng, Hà Nội",
+        "opening_hours": "Mở cửa: 09:00 - 22:00",
+        "phone": "+84 24 3200 8888",
+        "website": "http://timescity.com.vn"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [105.8676, 20.9953]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Royal City",
+        "description": "Royal City là một trong những trung tâm thương mại hiện đại và sang trọng nhất tại Thủ đô Hà Nội. Với thiết kế đẳng cấp và đa dạng các tiện ích như rạp chiếu phim, khu vui chơi trẻ em, nhà hàng, quán café, và các cửa hàng thời trang cao cấp, Royal City không chỉ là điểm đến mua sắm mà còn là điểm hội tụ văn hóa và giải trí đa dạng.",
+        "type": "trung tâm thương mại",
+        "image": "image/ry.jpg",
+        "rating": 4.3,
+        "address": "72 Nguyễn Trãi, Thượng Đình, Thanh Xuân, Hà Nội",
+        "opening_hours": "Mở cửa: 09:30 - 22:00",
+        "phone": "+84 24 3974 1234",
+        "website": "http://vincom.com.vn"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [105.8162, 21.0036]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Vincom Smart City",
+        "description": "Vincom Mega Mall Smart City tọa lạc tại tâm điểm sầm uất phía Tây Hà Nội với quy mô lên tới 68.000m2. Trung tâm được xây dựng với thiết kế hiện đại, tiện nghi, mang lại những trải nghiệm dịch vụ tuyệt vời cho mọi đối tượng từ trẻ em đến người lớn tuổi.",
+        "type": "khu đô thị",
+        "image": "image/vcs.jpg",
+        "rating": 4.5,
+        "address": "Tây Mỗ, Nam Từ Liêm, Hà Nội",
+        "opening_hours": "Mở cửa: 09:00 - 22:00",
+        "phone": "+84 24 3200 9999",
+        "website": "http://vincity.com.vn"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [105.7351, 21.009]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "StarLake",
+        "description": "Hội tụ những giá trị sống đẳng cấp hiếm dự án nào có được, Star Lake Hồ Tây là nơi tập trung của những cư dân học thức cao, đa quốc tịch với cộng đồng cư dân hiện đại với lối ứng xử văn minh, tuyệt đối tôn trọng sự riêng tư và an toàn của cư dân.",
+        "type": "khu đô thị",
+        "image": "image/stl.jpg",
+        "rating": 4.2,
+        "address": "Bắc Từ Liêm, Hà Nội",
+        "opening_hours": "Mở cửa cả ngày",
+        "phone": "Không có số điện thoại",
+        "website": ""
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [105.8013, 21.0669]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Tràng Tiền Plaza",
+        "description": "Tràng Tiền Plaza là một trung tâm thương mại của Việt Nam có vị trí tại quận Hoàn Kiếm, Hà Nội. Trung tâm này nằm trên vị trí của Bách hóa Tổng hợp Hà Nội cũ, trước đó là tòa nhà Godard. Đây là một trong những trung tâm mua sắm lớn nhất Hà Nội, cũng là trung tâm thương mại đầu tiên tại Việt Nam theo Tổ chức Kỷ lục Việt Nam. Địa điểm này được xem là một trong những biểu tượng lịch sử thương mại của Hà Nội trong suốt thế kỷ 20, đồng thời đóng vai trò như một minh chứng cho sự phát triển của kinh tế Hà Nội và của Việt Nam.",
+        "type": "trung tâm thương mại",
+        "image": "image/ttp.jpg",
+        "rating": 4.4,
+        "address": "24 Hai Bà Trưng, Tràng Tiền, Hoàn Kiếm, Hà Nội",
+        "opening_hours": "Mở cửa: 09:30 - 22:00",
+        "phone": "+84 24 3937 8888",
+        "website": "http://trangtienplaza.vn"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [105.8561, 21.024]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Sân vận động Mỹ Đình",
+        "description": "Sân vận động Quốc gia Mỹ Đình (hay đơn giản là Sân Mỹ Đình) là một sân vận động đa năng ở quận Nam Từ Liêm, Hà Nội, Việt Nam. Sân có sức chứa 40.192 chỗ ngồi và là trung tâm của Khu liên hợp thể thao quốc gia Việt Nam.",
+        "type": "sân vận động",
+        "image": "image/svd.jpg",
+        "rating": 4.3,
+        "address": "Lê Đức Thọ, Mỹ Đình, Nam Từ Liêm, Hà Nội",
+        "opening_hours": "Mở cửa: 08:00 - 17:00",
+        "phone": "+84 24 3785 1234",
+        "website": "http://sanvandongmydinh.com.vn"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [105.7686, 21.0277]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Bảo tàng Hà Nội",
+        "description": "Được thành lập từ năm 1982, nên số lượng hiện vật của bảo tàng lên tới hàng chục ngàn, trong đó riêng kho cổ vật quý hiếm đã chiếm tới hơn 7 ngàn. Bộ sưu tập của bảo tàng bao gồm đồ đá, đồ đồng, gốm sứ các thời nhà Lý, Trần, Lê, Nguyễn, gốm sứ của Trung Quốc, Nhật Bản.",
+        "type": "bảo tàng",
+        "image": "image/bthn.jpg",
+        "rating": 4.2,
+        "address": "Phạm Hùng, Mễ Trì, Nam Từ Liêm, Hà Nội",
+        "opening_hours": "Mở cửa: 08:00 - 17:00",
+        "phone": "+84 24 3785 1234",
+        "website": "http://baotanghanoi.com.vn"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [105.7935, 21.0133]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Vincom Mega Mall Times City",
+        "description": "Được biết đến là khu trung tâm thương mại ngầm lớn thứ 2 tại Việt Nam, Vincom Mega Mall Times City không chỉ thu hút cộng đồng người dân thủ đô mà còn những người dân đến từ các tỉnh lân cận bởi hàng trăm thương hiệu độc đáo và những tiện ích giải trí ưu việt.",
+        "type": "trung tâm thương mại",
+        "image": "image/vcmg.jpg",
+        "rating": 4.4,
+        "address": "458 Minh Khai, Vĩnh Tuy, Hai Bà Trưng, Hà Nội",
+        "opening_hours": "Mở cửa: 09:30 - 22:00",
+        "phone": "+84 24 3200 8888",
+        "website": "http://vincom.com.vn"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [105.8678, 20.9955]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Sun Grand City Thụy Khuê",
+        "description": "Cận kề “lá phổi xanh” công viên Bách Thảo và Hồ Tây, Sun Grand City Thuy Khue Residence là tổ hợp chung cư và căn hộ cao cấp, đem đến cuộc sống lý tưởng cho cư dân với bầu không khí trong lành, mát mẻ và vẻ đẹp cổ xưa của Hà Nội. Hệ thống căn hộ được thiết kế thông minh và linh hoạt, đáp ứng yêu cầu của nhiều đối tượng cư dân khác nhau. Trung tâm thương mại Sun Plaza Thụy Khuê ở khối đế tổ hợp căn hộ cung cấp hệ thống dịch vụ, tiện ích đa dạng trong không gian sang trọng",
+        "type": "khu đô thị",
+        "image": "image/sg.jpg",
+        "rating": 4.3,
+        "address": "69B Thụy Khuê, Thụy Khuê, Tây Hồ, Hà Nội",
+        "opening_hours": "Mở cửa: 09:00 - 18:00",
+        "phone": "+84 24 7300 8888",
+        "website": "http://sungroup.com.vn"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [105.8331, 21.0453]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Công viên Nghĩa Đô",
+        "description": "Công viên Nghĩa Đô là một trong những công viên lớn nhất tại Hà Nội. Với vị trí đắc địa nằm giữa trung tâm thành phố cùng khuôn viên xanh mát, nơi đây được mệnh danh là 'hòn ngọc xanh' của Thủ đô. Nếu có dịp du lịch Hà Nội, đừng bỏ qua cơ hội khám phá thiên đường xanh này với nhiều trải nghiệm cực thú vị.",
+        "type": "công viên",
+        "image": "image/cvnd.jpg",
+        "rating": 4.0,
+        "address": "Nghĩa Đô, Cầu Giấy, Hà Nội",
+        "opening_hours": "Mở cửa: 05:00 - 22:00",
+        "phone": "+84 24 3756 1234",
+        "website": ""
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [105.7985, 21.0372]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Lotte Center Hà Nội",
+        "description": "Lotte Center Hà Nội (Hanoi City Complex) cao 272,3m là tòa nhà chọc trời cao thứ 3 tại Việt Nam và thứ 2 ở thành phố Hà Nội.  Tòa nhà bao gồm khu văn phòng, giải trí, trung tâm mua sắm và một trung tâm tổ chức hội nghị cao cấp.",
+        "type": "cao ốc",
+        "image": "image/lc.jpg",
+        "rating": 4.4,
+        "address": "54 Liễu Giai, Cống Vị, Ba Đình, Hà Nội",
+        "opening_hours": "Mở cửa: 09:00 - 22:00",
+        "phone": "+84 24 3333 1234",
+        "website": "http://lottecenter.com.vn"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [105.8129, 21.0335]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Đường Kim Mã",
+        "description": "Kim Mã là một phố lớn của Hà Nội, sầm uất bán buôn, người xe qua lại tấp nập ngày đêm. Trong cảnh xô bồ của phố phường đô thị, không chỉ nổi tiếng là một trong những cửa ô dẫn vào thành phố, phố Kim Mã vẫn giữ được vẻ đẹp lãng mạn, nên thơ mà ít con phố nào của Hà Nội có được.",
+        "type": "đường phố",
+        "image": "image/km.jpg",
+        "rating": 4.0,
+        "address": "Ba Đình, Hà Nội",
+        "opening_hours": "Mở cửa cả ngày",
+        "phone": "Không có số điện thoại",
+        "website": ""
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [105.812, 21.0338]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Đường Thanh Niên",
+        "description": "Đường Thanh Niên được biết đến là “con đường tình yêu” lãng mạn bậc nhất Hà Nội. Được hình thành từ khoảng thế kỷ XV - XVII, đến nay đường Thanh Niên đã trải qua hàng trăm năm lịch sử với rất nhiều những đổi thay. ",
+        "type": "đường phố",
+        "image": "image/dtn.jpg",
+        "rating": 4.3,
+        "address": "Trúc Bạch, Ba Đình, Hà Nội",
+        "opening_hours": "Mở cửa cả ngày",
+        "phone": "Không có số điện thoại",
+        "website": ""
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [105.8366, 21.0516]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Khu đô thị Ecopark",
+        "description": "Ecopark là khu đô thị sinh thái lớn nhất miền Bắc với quy mô gần 500 ha, dự án tọa lạc tại các xã Xuân Quan, Cửu Cao và Phụng Công thuộc huyện Văn Giang, tỉnh Hưng Yên. Ecopark nằm kề bên làng gốm Bát Tràng và cách Hồ Hoàn Kiếm – Trung tâm thủ đô Hà Nội 13km về hướng Đông Nam. Được thiên nhiên ưu đãi bao quanh bởi sông Hồng và sông Đuống, trải mình trên bờ sông Bắc Hưng Hải cùng diện tích cây xanh bao quanh hứa hẹn một cuộc sống trọn vẹn.",
+        "type": "khu đô thị",
+        "image": "image/ecp.jpg",
+        "rating": 4.5,
+        "address": "Văn Giang, Hưng Yên (gần Hà Nội)",
+        "opening_hours": "Mở cửa: 09:00 - 18:00",
+        "phone": "+84 24 7300 1234",
+        "website": "http://ecopark.com.vn"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [105.9497, 20.9473]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Nhà thờ Cửa Bắc",
+        "description": "Nhà thờ Cửa Bắc (Nhà thờ Nữ Vương Các Thánh Tử Đạo) là một nhà thờ Công giáo ở Hà Nội, công trình kiến trúc này có nhiều nét độc đáo, tạo thêm điểm chấm phá trong không gian đô thị Hà Nội.",
+        "type": "nhà thờ",
+        "image": "image/cb.jpg",
+        "rating": 4.2,
+        "address": "56 Phan Đình Phùng, Quán Thánh, Ba Đình, Hà Nội",
+        "opening_hours": "Mở cửa: 07:00 - 20:00",
+        "phone": "+84 24 3825 1234",
+        "website": ""
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [105.8421, 21.0412]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Chợ đêm Phố cổ",
+        "description": "Khu vực phố đi bộ và chợ đêm phố cổ Hà Nội luôn có sức hút lớn với người dân và du khách. Cùng bạn bè, người thân tản bộ cuối tuần ở đây, thưởng thức những món ăn ngon, hòa mình vào những màn trình diễn đặc sắc sẽ giúp du khách thư giãn và nạp đầy năng lượng cho một tuần hiệu quả sắp tới.",
+        "type": "chợ",
+        "image": "image/chodem.jpg",
+        "rating": 4.3,
+        "address": "Hàng Đào, Hoàn Kiếm, Hà Nội",
+        "opening_hours": "Mở cửa: 19:00 - 23:00 (Thứ 6 - Chủ nhật)",
+        "phone": "Không có số điện thoại",
+        "website": ""
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [105.8539, 21.036]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Ga Hà Nội",
+        "description": "Ga Hà Nội tên cũ là Ga Hàng Cỏ, là một nhà ga xe lửa lớn của Việt Nam nằm trên các quận Hoàn Kiếm và Đống Đa, Hà Nội. Từ đây, hành khách có thể làm thủ tục mua vé tàu hỏa đi các tuyến trong nước.",
+        "type": "ga tàu",
+        "image": "image/ghn.jpg",
+        "rating": 4.1,
+        "address": "120 Lê Duẩn, Văn Miếu, Đống Đa, Hà Nội",
+        "opening_hours": "Mở cửa: 06:00 - 22:00",
+        "phone": "+84 24 3942 3697",
+        "website": "http://gahanoi.com.vn"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [105.841, 21.0245]
+      }
+    }
+  ]
+}
