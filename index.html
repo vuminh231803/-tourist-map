@@ -1,0 +1,620 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hà Nội - Bản đồ du lịch</title>
+  <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="sidebar">
+    <h2>📍 Bản đồ Hà Nội</h2>
+    <div id="weather-info" class="weather-info">
+      <img src="https://openweathermap.org/img/wn/01d.png" alt="Thời tiết">
+      <div>
+        <strong>Hà Nội:</strong> 28°C, Trời quang
+      </div>
+    </div>
+    <div class="search-container">
+      <input type="text" id="search" class="search-input" placeholder="Tìm địa điểm...">
+      <span class="search-icon">🔍</span>
+    </div>
+    <button id="dark-mode-toggle">🌙 Chế độ tối</button>
+    <button id="near-me-btn">Tìm gần tôi</button>
+    <div class="filter-group" id="filter-group">
+      <!-- Danh sách loại địa điểm -->
+    </div>
+
+    <!-- Nút mở form thêm địa điểm -->
+    <button onclick="document.getElementById('form-container').style.display='block'">Thêm địa điểm</button>
+
+    <!-- Bảng danh sách địa điểm -->
+    <table id="places-table">
+      <thead>
+        <tr>
+          <th>Tên</th>
+          <th>Địa chỉ</th>
+          <th>Hành động</th>
+        </tr>
+      </thead>
+      <tbody id="places-table-body"></tbody>
+    </table>
+
+    <!-- Form thêm/sửa địa điểm -->
+    <div id="form-container">
+      <h3 id="form-title">Thêm địa điểm mới</h3>
+      <form id="place-form" enctype="multipart/form-data">
+        <label for="name">Tên:</label>
+        <input type="text" id="name" required>
+        <label for="latitude">Vĩ độ:</label>
+        <input type="number" id="latitude" step="any" required>
+        <label for="longitude">Kinh độ:</label>
+        <input type="number" id="longitude" step="any" required>
+        <label for="type">Danh mục:</label>
+        <select id="type" required>
+          <option value="chùa">Chùa</option>
+          <option value="nhà thờ">Nhà thờ</option>
+          <option value="bảo tàng">Bảo tàng</option>
+          <option value="công viên">Công viên</option>
+          <option value="trung tâm thương mại">Trung tâm thương mại</option>
+        </select>
+        <label for="address">Địa chỉ:</label>
+        <input type="text" id="address">
+        <label for="description">Mô tả:</label>
+        <textarea id="description"></textarea>
+
+        <label for="phone">Số điện thoại:</label>
+        <input type="text" id="phone">
+
+        <label for="opening_hours">Giờ mở cửa:</label>
+        <input type="text" id="opening_hours">
+
+        <label for="website">Website:</label>
+        <input type="url" id="website">
+
+        <label for="image">Tải lên hình ảnh:</label>
+        <input type="file" id="image" accept="image/*">
+        <button type="submit">Lưu</button>
+        <button type="button" id="cancel-btn">Hủy</button>
+      </form>
+    </div>
+  </div>  
+
+  <div id="map"></div>
+
+  <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+  <script>
+    // Khởi tạo bản đồ
+    const map = L.map('map').setView([21.0285, 105.8542], 13);
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+      maxZoom: 19,
+      attribution: '© OpenStreetMap'
+    }).addTo(map);
+
+    // API URL
+    const apiUrl = 'http://localhost:3001/api/places';
+
+    // Lưu trữ marker và dữ liệu
+    let markersByType = {};
+    let allMarkers = [];
+    let currentLocation = null;
+    let currentRoute = null;
+    let favoritePlaces = JSON.parse(localStorage.getItem('favorites')) || [];
+    let placeRatings = JSON.parse(localStorage.getItem('placeRatings')) || {};
+    let activeType = null;
+
+    // Biểu tượng tùy chỉnh cho từng loại địa điểm
+    const icons = {
+      'chùa': L.icon({ iconUrl: 'https://cdn-icons-png.flaticon.com/32/306/306342.png', iconSize: [32, 32], iconAnchor: [16, 32] }),
+      'nhà thờ': L.icon({ iconUrl: 'https://cdn-icons-png.flaticon.com/32/188/188124.png', iconSize: [32, 32], iconAnchor: [16, 32] }),
+      'bảo tàng': L.icon({ iconUrl: 'https://cdn-icons-png.flaticon.com/32/167/167707.png', iconSize: [32, 32], iconAnchor: [16, 32] }),
+      'công viên': L.icon({ iconUrl: 'https://cdn-icons-png.flaticon.com/32/293/293117.png', iconSize: [32, 32], iconAnchor: [16, 32] }),
+      'trung tâm thương mại': L.icon({ iconUrl: 'https://cdn-icons-png.flaticon.com/32/308/308285.png', iconSize: [32, 32], iconAnchor: [16, 32] }),
+      'default': L.icon({ iconUrl: 'https://cdn-icons-png.flaticon.com/32/149/149060.png', iconSize: [32, 32], iconAnchor: [16, 32] })
+    };
+
+    // Emoji cho từng loại địa điểm
+    const typeEmojis = {
+      'chùa': '🛕',
+      'nhà thờ': '⛪',
+      'bảo tàng': '🏛️',
+      'công viên': '🌳',
+      'trung tâm thương mại': '🛍️',
+      'default': '📍'
+    };
+
+    // Hàm chuyển đổi tọa độ từ ST_AsText (POINT(long lat)) sang [lat, long]
+    function parseCoordinates(coordinates) {
+      const matches = coordinates.match(/POINT\(([^ ]+) ([^ ]+)\)/);
+      if (matches) return [parseFloat(matches[2]), parseFloat(matches[1])];
+      return [0, 0];
+    }
+
+    // Lấy vị trí hiện tại của người dùng
+    function requestLocation() {
+      if (confirm('Ứng dụng muốn truy cập vị trí của bạn để hiển thị vị trí hiện tại và tìm địa điểm gần bạn. Bạn có đồng ý không?')) {
+        navigator.geolocation.getCurrentPosition(
+          (position) => {
+            currentLocation = [position.coords.latitude, position.coords.longitude];
+            L.marker(currentLocation, { icon: L.icon({ iconUrl: 'https://cdn-icons-png.flaticon.com/32/684/684908.png', iconSize: [32, 32], iconAnchor: [16, 32] }) })
+              .bindPopup('Vị trí của bạn')
+              .addTo(map);
+            map.setView(currentLocation, 13);
+          },
+          (error) => {
+            console.error('Lỗi lấy vị trí:', error);
+            alert('Không thể lấy vị trí của bạn. Vui lòng bật định vị hoặc kiểm tra quyền truy cập.');
+          }
+        );
+      } else {
+        alert('Bạn đã từ chối cung cấp vị trí. Một số tính năng như "Tìm gần tôi" sẽ không hoạt động.');
+      }
+    }
+
+    // Hàm tính khoảng cách Haversine
+    function haversineDistance(coords1, coords2) {
+      const R = 6371;
+      const dLat = (coords2[0] - coords1[0]) * Math.PI / 180;
+      const dLon = (coords2[1] - coords1[1]) * Math.PI / 180;
+      const a = Math.sin(dLat/2) * Math.sin(dLat/2) +
+                Math.cos(coords1[0] * Math.PI / 180) * Math.cos(coords2[0] * Math.PI / 180) *
+                Math.sin(dLon/2) * Math.sin(dLon/2);
+      const c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1-a));
+      return R * c;
+    }
+
+    // Hàm tải dữ liệu từ API
+    async function loadPlaces() {
+      try {
+        const response = await fetch(apiUrl);
+        if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
+        const data = await response.json();
+        console.log('Dữ liệu địa điểm:', data);
+
+        if (!Array.isArray(data) || data.length === 0) {
+          console.warn('Không có dữ liệu địa điểm từ API');
+          alert('Không có dữ liệu địa điểm. Vui lòng kiểm tra cơ sở dữ liệu.');
+          return;
+        }
+
+        const filterGroup = document.getElementById('filter-group');
+        const types = new Set();
+
+        // Thu thập các loại địa điểm
+        data.forEach(place => {
+          if (place.type) types.add(place.type);
+        });
+
+        // Tạo nút lọc và danh sách con cho từng loại
+        types.forEach(type => {
+          const button = document.createElement('button');
+          button.innerHTML = `${typeEmojis[type] || typeEmojis['default']} ${type.charAt(0).toUpperCase() + type.slice(1)}`;
+          button.onclick = () => toggleType(type);
+          filterGroup.appendChild(button);
+
+          const subList = document.createElement('div');
+          subList.id = `list-${type}`;
+          subList.className = 'sub-list';
+          subList.innerHTML = '<ul></ul>';
+          filterGroup.appendChild(subList);
+        });
+
+        // Xử lý từng địa điểm
+        data.forEach(place => {
+          if (!place.coordinates || !place.name || !place.type) {
+            console.warn('Dữ liệu địa điểm không đầy đủ:', place);
+            return;
+          }
+
+          const type = place.type;
+          const name = place.name;
+          const desc = place.description || 'Không có mô tả'; // Sử dụng description nếu có trong API
+          const image = place.image || 'https://via.placeholder.com/300x150'; // Fallback nếu không có ảnh
+          const coord = parseCoordinates(place.coordinates);
+          const rating = placeRatings[name] || 'Chưa có đánh giá';
+          const address = place.address || 'Không có địa chỉ';
+          const opening_hours = place.opening_hours || 'Không có thông tin giờ mở cửa'; // Thêm nếu API có
+          const phone = place.phone || 'Không có số điện thoại'; // Thêm nếu API có
+          const website = place.website || ''; // Thêm nếu API có
+          const ogc_fid = place.ogc_fid; // Lưu ogc_fid để sử dụng cho CRUD
+
+          const marker = L.marker(coord, { icon: icons[type] || icons['default'] });
+          marker.bindPopup(`
+            <div class="leaflet-popup-content-wrapper">
+              <div class="popup-header">
+                <img src="${image}" alt="${name}" class="popup-image" loading="lazy">
+              </div>
+              <div class="popup-content">
+                <h3 class="popup-title">${name}</h3>
+                <div class="popup-rating">
+                  <span class="stars">${rating !== 'Chưa có đánh giá' ? '★★★★★'.slice(0, rating === 'Chưa có đánh giá' ? 0 : Math.round(rating)) + '☆☆☆☆☆'.slice(rating === 'Chưa có đánh giá' ? 0 : Math.round(rating)) : '☆☆☆☆☆'}</span>
+                  ${rating}
+                </div>
+                <div class="popup-address">${address}</div>
+                <div class="popup-hours">${opening_hours}</div>
+                <div class="popup-phone">${phone}</div>
+                ${website ? `<div class="popup-website"><a href="${website}" target="_blank">${website}</a></div>` : ''}
+                <p class="popup-description">${desc}</p>
+                <div class="popup-rating-input">
+                  <label>Đánh giá của bạn:</label>
+                  <select onchange="ratePlace('${name}', this.value)">
+                    <option value="">Chọn số sao</option>
+                    <option value="1">1 sao</option>
+                    <option value="2">2 sao</option>
+                    <option value="3">3 sao</option>
+                    <option value="4">4 sao</option>
+                    <option value="5">5 sao</option>
+                  </select>
+                </div>
+                <div class="popup-buttons">
+                  <button class="navigate-btn" onclick="navigateTo(${coord[0]}, ${coord[1]}, '${name}')">Chỉ đường</button>
+                  <button class="favorite-btn" onclick="toggleFavorite('${name}', '${coord}', '${type}', '${image}', '${desc}')">
+                    ${favoritePlaces.includes(name) ? 'Bỏ yêu thích' : 'Thêm vào yêu thích'}
+                  </button>
+                </div>
+              </div>
+            </div>
+          `).addTo(map);
+
+          marker.address = address;
+          marker.opening_hours = opening_hours;
+          marker.phone = phone;
+          marker.website = website;
+          marker.rating = rating;
+          marker.ogc_fid = ogc_fid;
+
+          if (!markersByType[type]) markersByType[type] = [];
+          markersByType[type].push(marker);
+          allMarkers.push({ marker, name, type, coord, image, desc });
+        });
+
+        updateSidebarAndMarkers();
+        updatePlacesTable(); // Cập nhật bảng
+      } catch (error) {
+        console.error('Lỗi tải dữ liệu:', error);
+        alert('Không thể tải địa điểm. Vui lòng kiểm tra server.');
+      }
+    }
+
+    // Hàm cập nhật sidebar và marker
+    function updateSidebarAndMarkers(searchText = '') {
+      Object.keys(markersByType).forEach(type => {
+        const container = document.getElementById('list-' + type);
+        const ul = container.querySelector('ul');
+        ul.innerHTML = '';
+        container.style.display = 'none';
+      });
+
+      allMarkers.forEach(({ marker }) => {
+        map.removeLayer(marker);
+      });
+
+      allMarkers.forEach(({ marker, name, type, coord }) => {
+        const matchesSearch = searchText === '' || name.toLowerCase().includes(searchText.toLowerCase());
+        const matchesType = activeType === null || type === activeType;
+
+        if (matchesSearch && matchesType) {
+          marker.addTo(map);
+
+          const container = document.getElementById('list-' + type);
+          if (container) {
+            const ul = container.querySelector('ul');
+            const li = document.createElement('li');
+            li.textContent = name;
+            li.onclick = () => {
+              map.setView(coord, 16);
+              marker.openPopup();
+            };
+            ul.appendChild(li);
+            container.style.display = 'block';
+          }
+        }
+      });
+    }
+
+    // Hàm cập nhật bảng danh sách địa điểm
+    function updatePlacesTable() {
+      const tableBody = document.getElementById('places-table-body');
+      tableBody.innerHTML = '';
+      allMarkers.forEach(({ marker, name, type }) => {
+        const row = document.createElement('tr');
+        row.innerHTML = `
+          <td>${name}</td>
+          <td>${marker.address || 'Chưa có'}</td>
+          <td>
+            <button onclick="editPlace(${marker.ogc_fid})">Sửa</button>
+            <button onclick="deletePlace(${marker.ogc_fid})">Xóa</button>
+          </td>
+        `;
+        tableBody.appendChild(row);
+      });
+    }
+
+    // Hàm chuyển đổi hiển thị danh sách và marker theo loại
+    function toggleType(type) {
+      if (activeType === type) {
+        activeType = null;
+      } else {
+        activeType = type;
+      }
+      updateSidebarAndMarkers(document.getElementById('search').value);
+    }
+
+    // Tìm kiếm địa điểm
+    document.getElementById('search').addEventListener('input', function(e) {
+      const searchText = e.target.value.trim();
+      updateSidebarAndMarkers(searchText);
+    });
+
+    // Thêm sự kiện cho nút "Tìm gần tôi"
+    document.getElementById('near-me-btn').addEventListener('click', function() {
+      if (!currentLocation) {
+        alert('Vui lòng cho phép truy cập vị trí để sử dụng tính năng này.');
+        return;
+      }
+
+      const nearbyPlaces = allMarkers.map(marker => {
+        const distance = haversineDistance(currentLocation, marker.coord);
+        return { ...marker, distance };
+      });
+
+      nearbyPlaces.sort((a, b) => a.distance - b.distance);
+      const topNearby = nearbyPlaces.slice(0, 5);
+
+      const nearMeList = document.createElement('div');
+      nearMeList.id = 'near-me-list';
+      nearMeList.className = 'near-me-container';
+      nearMeList.innerHTML = '<h3>Gần bạn nhất</h3><ul></ul>';
+      const ul = nearMeList.querySelector('ul');
+      topNearby.forEach(place => {
+        const li = document.createElement('li');
+        li.className = 'near-me-item';
+        li.innerHTML = `
+          <img src="${place.image || 'https://via.placeholder.com/40'}" alt="${place.name}">
+          <div>
+            <strong>${place.name}</strong><br>
+            ${place.type.charAt(0).toUpperCase() + place.type.slice(1)} (${place.distance.toFixed(2)} km)
+          </div>
+        `;
+        li.onclick = () => {
+          map.setView(place.coord, 16);
+          place.marker.openPopup();
+        };
+        ul.appendChild(li);
+      });
+
+      const existingList = document.getElementById('near-me-list');
+      if (existingList) existingList.remove();
+      const nearMeBtn = document.getElementById('near-me-btn');
+      nearMeBtn.insertAdjacentElement('afterend', nearMeList);
+    });
+
+    // Thêm sự kiện cho nút dark mode
+    document.getElementById('dark-mode-toggle').addEventListener('click', function() {
+      document.body.classList.toggle('dark-mode');
+      const isDarkMode = document.body.classList.contains('dark-mode');
+      this.textContent = isDarkMode ? '☀️ Chế độ sáng' : '🌙 Chế độ tối';
+    });
+
+    // Hàm dẫn đường sử dụng OSRM
+    function navigateTo(lat, lng, destinationName) {
+      if (!currentLocation) {
+        alert('Không thể lấy vị trí hiện tại. Vui lòng kiểm tra quyền định vị.');
+        return;
+      }
+
+      if (currentRoute) {
+        map.removeLayer(currentRoute);
+      }
+
+      const osrmUrl = `http://router.project-osrm.org/route/v1/bike/${currentLocation[1]},${currentLocation[0]};${lng},${lat}?overview=full&geometries=geojson`;
+      fetch(osrmUrl)
+        .then(res => res.json())
+        .then(data => {
+          if (data.code === 'Ok') {
+            const routeCoords = data.routes[0].geometry.coordinates.map(coord => [coord[1], coord[0]]);
+            currentRoute = L.polyline(routeCoords, { color: 'blue', weight: 4 }).addTo(map);
+            map.fitBounds(currentRoute.getBounds());
+          } else {
+            alert('Không thể tìm tuyến đường. Vui lòng thử lại.');
+          }
+        })
+        .catch(err => {
+          console.error('Lỗi gọi OSRM API:', err);
+          alert('Lỗi khi tìm tuyến đường. Vui lòng thử lại.');
+        });
+    }
+
+    // Hàm xử lý đánh giá
+    function ratePlace(name, rating) {
+      placeRatings[name] = rating;
+      localStorage.setItem('placeRatings', JSON.stringify(placeRatings));
+      updatePopup(name);
+    }
+
+    // Hàm cập nhật popup sau khi đánh giá
+    function updatePopup(name) {
+      allMarkers.forEach(({ marker, name: markerName, coord, type, image, desc }) => {
+        if (markerName === name) {
+          const rating = placeRatings[name] || marker.rating || 'Chưa có đánh giá';
+          marker.setPopupContent(`
+            <div class="leaflet-popup-content-wrapper">
+              <div class="popup-header">
+                <img src="${image}" alt="${name}" class="popup-image" loading="lazy">
+              </div>
+              <div class="popup-content">
+                <h3 class="popup-title">${name}</h3>
+                <div class="popup-rating">
+                  <span class="stars">${rating !== 'Chưa có đánh giá' ? '★★★★★'.slice(0, rating === 'Chưa có đánh giá' ? 0 : Math.round(rating)) + '☆☆☆☆☆'.slice(rating === 'Chưa có đánh giá' ? 0 : Math.round(rating)) : '☆☆☆☆☆'}</span>
+                  ${rating}
+                </div>
+                <div class="popup-address">${marker.address || 'Không có địa chỉ'}</div>
+                <div class="popup-hours">${marker.opening_hours || 'Không có thông tin giờ mở cửa'}</div>
+                <div class="popup-phone">${marker.phone || 'Không có số điện thoại'}</div>
+                ${marker.website ? `<div class="popup-website"><a href="${marker.website}" target="_blank">${marker.website}</a></div>` : ''}
+                <p class="popup-description">${desc}</p>
+                <div class="popup-rating-input">
+                  <label>Đánh giá của bạn:</label>
+                  <select onchange="ratePlace('${name}', this.value)">
+                    <option value="">Chọn số sao</option>
+                    <option value="1">1 sao</option>
+                    <option value="2">2 sao</option>
+                    <option value="3">3 sao</option>
+                    <option value="4">4 sao</option>
+                    <option value="5">5 sao</option>
+                  </select>
+                </div>
+                <div class="popup-buttons">
+                  <button class="navigate-btn" onclick="navigateTo(${coord[0]}, ${coord[1]}, '${name}')">Chỉ đường</button>
+                  <button class="favorite-btn" onclick="toggleFavorite('${name}', '${coord}', '${type}', '${image}', '${desc}')">
+                    ${favoritePlaces.includes(name) ? 'Bỏ yêu thích' : 'Thêm vào yêu thích'}
+                  </button>
+                </div>
+              </div>
+            </div>
+          `);
+        }
+      });
+    }
+
+    // Hàm thêm/bỏ yêu thích
+    function toggleFavorite(name, coord, type, image, desc) {
+      if (favoritePlaces.includes(name)) {
+        favoritePlaces = favoritePlaces.filter(place => place !== name);
+      } else {
+        favoritePlaces.push(name);
+      }
+      localStorage.setItem('favorites', JSON.stringify(favoritePlaces));
+
+      allMarkers.forEach(({ marker: m, name: markerName }) => {
+        if (markerName === name) {
+          m.setPopupContent(`
+            <div class="leaflet-popup-content-wrapper">
+              <div class="popup-header">
+                <img src="${image}" alt="${name}" class="popup-image" loading="lazy">
+              </div>
+              <div class="popup-content">
+                <h3 class="popup-title">${name}</h3>
+                <div class="popup-rating">
+                  <span class="stars">${m.rating ? '★★★★★'.slice(0, Math.round(m.rating)) + '☆☆☆☆☆'.slice(Math.round(m.rating)) : '☆☆☆☆☆'}</span>
+                  ${m.rating || 'Chưa có đánh giá'}
+                </div>
+                <div class="popup-address">${m.address || 'Không có địa chỉ'}</div>
+                <div class="popup-hours">${m.opening_hours || 'Không có thông tin giờ mở cửa'}</div>
+                <div class="popup-phone">${m.phone || 'Không có số điện thoại'}</div>
+                ${m.website ? `<div class="popup-website"><a href="${m.website}" target="_blank">${m.website}</a></div>` : ''}
+                <p class="popup-description">${desc}</p>
+                <div class="popup-rating-input">
+                  <label>Đánh giá của bạn:</label>
+                  <select onchange="ratePlace('${name}', this.value)">
+                    <option value="">Chọn số sao</option>
+                    <option value="1">1 sao</option>
+                    <option value="2">2 sao</option>
+                    <option value="3">3 sao</option>
+                    <option value="4">4 sao</option>
+                    <option value="5">5 sao</option>
+                  </select>
+                </div>
+                <div class="popup-buttons">
+                  <button class="navigate-btn" onclick="navigateTo(${coord.split(',')[0]}, ${coord.split(',')[1]}, '${name}')">Chỉ đường</button>
+                  <button class="favorite-btn" onclick="toggleFavorite('${name}', '${coord}', '${type}', '${image}', '${desc}')">
+                    ${favoritePlaces.includes(name) ? 'Bỏ yêu thích' : 'Thêm vào yêu thích'}
+                  </button>
+                </div>
+              </div>
+            </div>
+          `);
+        }
+      });
+
+      updateSidebarAndMarkers(document.getElementById('search').value);
+    }
+
+    // Thêm địa điểm mới
+    document.getElementById('place-form').addEventListener('submit', async (e) => {
+      e.preventDefault();
+        const place = {
+      name: document.getElementById('name').value,
+      type: document.getElementById('type').value,
+      address: document.getElementById('address').value || null,
+      wkb_geometry: `POINT(${document.getElementById('longitude').value} ${document.getElementById('latitude').value})`,
+      description: document.getElementById('description').value || null,
+      phone: document.getElementById('phone').value || null,
+      opening_hours: document.getElementById('opening_hours').value || null,
+      website: document.getElementById('website').value || null
+    };
+
+
+      try {
+        const method = id ? 'PUT' : 'POST';
+        const url = id ? `${apiUrl}/${id}` : apiUrl;
+        const response = await fetch(url, {
+          method,
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(place)
+        });
+        if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
+        resetForm();
+        markersByType = {};
+        allMarkers = [];
+        loadPlaces();
+      } catch (error) {
+        console.error('Lỗi khi lưu địa điểm:', error);
+        alert('Không thể lưu địa điểm. Vui lòng kiểm tra lại.');
+      }
+    });
+
+    // Sửa địa điểm
+    function editPlace(ogc_fid) {
+      const markerData = allMarkers.find(m => m.marker.ogc_fid === ogc_fid);
+      if (markerData) {
+        const { name, type, coord, image } = markerData;
+        const address = markerData.marker.address || '';
+        document.getElementById('form-title').textContent = 'Sửa địa điểm';
+        document.getElementById('name').value = name;
+        document.getElementById('latitude').value = coord[0];
+        document.getElementById('longitude').value = coord[1];
+        document.getElementById('type').value = type;
+        document.getElementById('address').value = address;
+        // Không cần điền file input, chỉ giữ tham chiếu
+        document.getElementById('form-container').style.display = 'block';
+        document.getElementById('place-form').dataset.id = ogc_fid;
+      }
+    }
+
+    // Xóa địa điểm
+    async function deletePlace(ogc_fid) {
+      if (confirm('Bạn có chắc muốn xóa địa điểm này?')) {
+        try {
+          const response = await fetch(`${apiUrl}/${ogc_fid}`, { method: 'DELETE' });
+          if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
+          markersByType = {};
+          allMarkers = [];
+          loadPlaces();
+        } catch (error) {
+          console.error('Lỗi khi xóa địa điểm:', error);
+          alert('Không thể xóa địa điểm. Vui lòng kiểm tra lại.');
+        }
+      }
+    }
+
+    // Đặt lại form
+    function resetForm() {
+      document.getElementById('place-form').reset();
+      document.getElementById('form-title').textContent = 'Thêm địa điểm mới';
+      document.getElementById('form-container').style.display = 'none';
+      delete document.getElementById('place-form').dataset.id;
+    }
+
+    // Hủy form
+    document.getElementById('cancel-btn').addEventListener('click', resetForm);
+
+    // Gọi các hàm khởi tạo
+    document.addEventListener('DOMContentLoaded', () => {
+      requestLocation();
+      loadPlaces();
+    });
+  </script>
+</body>
+</html>
